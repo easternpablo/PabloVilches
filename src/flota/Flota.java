@@ -73,7 +73,7 @@ public class Flota{
             }
         }   
         System.out.println("");
-            
+        System.out.print("");    
     }
     //disparar: recibe como parámetros una fila (char) y una columna (int). Marca la posición del array con el carácter correspondiente (X para tocado, un punto para agua). Devuelve 0 para 'agua', 1 para 'tocado'.
     public boolean disparar(int y,char x){
