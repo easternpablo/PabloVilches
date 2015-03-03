@@ -62,18 +62,19 @@ public class Flota{
 
     //mostrar: muestra el tablero de este modo:
     public void mostrar(){
-        int enumeracion = 65;
+       
         System.out.print("  ");
-        for (int i = 0; i < tablero.length; i++) System.out.print(i+" ");
-        
-        for (char[] filas: tablero) {
-            System.out.print("\n"+(char)enumeracion+++" ");
-            for(char caracter: filas){
-                System.out.print(caracter+" ");
-            }
-        }   
+        for (int columna = 1; columna <= tablero[0].length; columna++) 
+            System.out.print(columna+" | ");
         System.out.println("");
         
+        for (int fila = 0; fila < tablero.length; fila++) {
+            char letra =(char)(fila+'A');
+            System.out.print(letra);
+            for (int columna = 0; columna < tablero[0].length; columna++)
+                System.out.print("| "+tablero[fila][columna]+" ");
+            System.out.println(" |");
+        }
     }
     //disparar: recibe como parámetros una fila (char) y una columna (int). Marca la posición del array con el carácter correspondiente (X para tocado, un punto para agua). Devuelve 0 para 'agua', 1 para 'tocado'.
     public boolean disparar(int y,char x){
